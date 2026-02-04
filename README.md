@@ -1,36 +1,25 @@
-### Github-Username-Checker ###
+# 🔍 GitHub Username Checker
 
-This python script checks for all the available 4 character usernames on Github and gives different types of output:
+A high-performance Python script designed to find rare 4-character GitHub handles. It uses the GitHub API to verify availability and double-checks against the registration validator to filter out "ghost" usernames.
 
-Yellow output means that the username is either recently deleted, deactivated or banned/flagged
+## 🚀 Features
+* **Double Verification:** Checks both API status and registration availability.
+* **Auto-Saving:** Automatically exports claimable names to `claimable_names.txt`.
+* **Visual Feedback:** Color-coded terminal output for real-time monitoring.
+* **Rate Limit Handling:** Built-in logic to pause when GitHub's API limit is reached.
 
-Red output means that the username is fully unavailable and cannot be used. The account with that username is active
+## 🚦 Output Key
+| Color | Meaning |
+| :--- | :--- |
+| 🟨 **Yellow** | **Restricted:** Recently deleted, deactivated, or flagged. (Cannot be claimed) |
+| 🟥 **Red** | **Unavailable:** The account is active and the name is taken. |
+| 🟩 **Green** | **Available!** The name is free to use and saved to your text file. |
 
-Green output means that the username is free to use and can be applied to your account and will be put into the claimable_names.txt file created in the folder where the python file is placed.
+---
 
-Before running the script on your device make sure to acquaire the PAT from github:
+## 🛠️ Setup & Requirements
 
-Step-by-Step Guide:
-
-Go to Settings: Click your profile photo in the top right corner and select Settings.
-
-Developer Settings: On the far left sidebar, scroll all the way to the bottom and click Developer settings.
-
-Personal Access Tokens: Select this, then choose Tokens (classic).
-
-Note: If the script I gave you is simple, "Classic" is usually easier to set up.
-
-Generate New Token: Click the Generate new token dropdown and select Generate new token (classic).
-
-Configure:
-
-Note: Give it a name (e.g., "Username_Checker").
-
-Expiration: Set it to 30, 60, or 90 days.
-
-Scopes: For a username checker, you actually don't need to check any boxes. An un-scoped token still gives you the higher rate limit (5,000/hr) for public data.
-
-Generate and Save: Click the green Generate token button at the bottom.
-
-
-that is all...
+### 1. Prerequisites
+Ensure you have Python installed and the required library:
+```bash
+pip install requests termcolor
